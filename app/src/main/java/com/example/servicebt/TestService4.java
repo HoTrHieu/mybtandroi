@@ -20,7 +20,7 @@ public class TestService4 extends Activity implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_main);
         txtMsg = (TextView) findViewById(R.id.txtMsg);
         findViewById(R.id.btnStart4).setOnClickListener(this);
         findViewById(R.id.btnStop4).setOnClickListener(this);
@@ -34,11 +34,11 @@ public class TestService4 extends Activity implements View.OnClickListener {
         //intentCallService5 = new Intent(this, MyService5Async.class);
         //intentCallService6 = new Intent(this, MyService6.class);
 // register local listener & define triggering filter
-        IntentFilter filter5 = new IntentFilter("matos.action.GOSERVICE5");
-        IntentFilter filter6 = new IntentFilter("matos.action.GPSFIX");
+        //IntentFilter filter5 = new IntentFilter("matos.action.GOSERVICE5");
+        //IntentFilter filter6 = new IntentFilter("matos.action.GPSFIX");
         receiver = new MyEmbeddedBroadcastReceiver();
-        registerReceiver(receiver, filter5);
-        registerReceiver(receiver, filter6);
+        //registerReceiver(receiver, filter5);
+        //registerReceiver(receiver, filter6);
     }// onCreate
     @Override
     public void onClick(View v) {
