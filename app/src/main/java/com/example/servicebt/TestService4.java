@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import csu.matos.R;
+import com.example.servicebt.R;
 
 
 public class TestService4 extends Activity implements View.OnClickListener {

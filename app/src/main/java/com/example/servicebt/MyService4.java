@@ -6,7 +6,7 @@ import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
-import csu.matos.R;
+import com.example.servicebt.R;
 
 public class MyService4 extends Service {
     public static boolean boolIsServiceCreated = false; MediaPlayer player;
