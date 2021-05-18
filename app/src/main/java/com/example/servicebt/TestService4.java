@@ -2,14 +2,18 @@ package com.example.servicebt;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
-import com.example.servicebt.R;
+import csu.matos.R;
 
-public class TestService4 extends Activity implements OnClickListener {
+
+public class TestService4 extends Activity implements View.OnClickListener {
     TextView txtMsg;
     Intent intentCallService4, intentCallService5, intentCallService6;
     BroadcastReceiver receiver;
@@ -20,15 +24,15 @@ public class TestService4 extends Activity implements OnClickListener {
         txtMsg = (TextView) findViewById(R.id.txtMsg);
         findViewById(R.id.btnStart4).setOnClickListener(this);
         findViewById(R.id.btnStop4).setOnClickListener(this);
-        findViewById(R.id.btnStart5).setOnClickListener(this);
-        findViewById(R.id.btnStop5).setOnClickListener(this);
-        findViewById(R.id.btnStart6).setOnClickListener(this);
-        findViewById(R.id.btnStop6).setOnClickListener(this);
+//        findViewById(R.id.btnStart5).setOnClickListener(this);
+//        findViewById(R.id.btnStop5).setOnClickListener(this);
+//        findViewById(R.id.btnStart6).setOnClickListener(this);
+//        findViewById(R.id.btnStop6).setOnClickListener(this);
         Log.e("MAIN", "Main started");
 // get ready to invoke execution of background services
         intentCallService4 = new Intent(this, MyService4.class);
-        intentCallService5 = new Intent(this, MyService5Async.class);
-        intentCallService6 = new Intent(this, MyService6.class);
+        //intentCallService5 = new Intent(this, MyService5Async.class);
+        //intentCallService6 = new Intent(this, MyService6.class);
 // register local listener & define triggering filter
         IntentFilter filter5 = new IntentFilter("matos.action.GOSERVICE5");
         IntentFilter filter6 = new IntentFilter("matos.action.GPSFIX");
@@ -46,22 +50,22 @@ public class TestService4 extends Activity implements OnClickListener {
             Log.e("MAIN", "onClick: stopping service4");
             stopService(intentCallService4);
         }
-        else if (v.getId() == R.id.btnStart5) {
-            Log.e("MAIN", "onClick: starting service5");
-            startService(intentCallService5);
-        }
-        else if (v.getId() == R.id.btnStop5) {
-            Log.e("MAIN", "onClick: stopping service5");
-            stopService(intentCallService5);
-        }
-        else if (v.getId() == R.id.btnStart6) {
-            Log.e("MAIN", "onClick: starting service6");
-            startService(intentCallService6);
-        }
-        else if (v.getId() == R.id.btnStop6) {
-            Log.e("MAIN", "onClick: stopping service6");
-            stopService(intentCallService6);
-        }
+//        else if (v.getId() == R.id.btnStart5) {
+//            Log.e("MAIN", "onClick: starting service5");
+//            startService(intentCallService5);
+//        }
+//        else if (v.getId() == R.id.btnStop5) {
+//            Log.e("MAIN", "onClick: stopping service5");
+//            stopService(intentCallService5);
+//        }
+//        else if (v.getId() == R.id.btnStart6) {
+//            Log.e("MAIN", "onClick: starting service6");
+//            startService(intentCallService6);
+//        }
+//        else if (v.getId() == R.id.btnStop6) {
+//            Log.e("MAIN", "onClick: stopping service6");
+//            stopService(intentCallService6);
+//        }
     }// onClick
     public class MyEmbeddedBroadcastReceiver extends BroadcastReceiver {
         @Override

@@ -6,6 +6,7 @@ import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
+import csu.matos.R;
 
 public class MyService4 extends Service {
     public static boolean boolIsServiceCreated = false; MediaPlayer player;
@@ -15,7 +16,7 @@ public class MyService4 extends Service {
         Toast.makeText(this, "MyService4 Created", Toast.LENGTH_LONG).show();
         Log.e("MyService4", "onCreate");
         boolIsServiceCreated = true;
-        player = MediaPlayer.create(getApplicationContext(), R.raw.good_bad_ugly);
+        player = MediaPlayer.create(getApplicationContext(), R.raw.nangtho);
     }
     @Override
     public void onDestroy() {
